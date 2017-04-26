@@ -1,0 +1,14 @@
+rm -rf __deployme
+mkdir __deployme
+
+#build
+sh scripts/build.sh
+
+uglify -s bundle.js -o __deployme/bundle.js
+
+cssshrink bundle.css > __deployme/bundle.css
+
+cp index.html __deployme/index.html
+cp -r images/ __deployme/images/
+
+date; echo;
