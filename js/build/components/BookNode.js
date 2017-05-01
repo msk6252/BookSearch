@@ -4,9 +4,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _Book = require('./Book');
+
+var _Book2 = _interopRequireDefault(_Book);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24,6 +30,25 @@ var BookNode = function (_React$Component) {
 
     return _possibleConstructorReturn(this, (BookNode.__proto__ || Object.getPrototypeOf(BookNode)).apply(this, arguments));
   }
+
+  _createClass(BookNode, [{
+    key: 'render',
+    value: function render() {
+      var bookNodes = this.props.data.map(function (book) {
+        return _react2.default.createElement(_Book2.default, { data: book });
+      });
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'bookList' },
+        _react2.default.createElement(
+          'ul',
+          null,
+          bookNodes
+        )
+      );
+    }
+  }]);
 
   return BookNode;
 }(_react2.default.Component);

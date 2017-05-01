@@ -1,10 +1,12 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = require('react');
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -24,6 +26,25 @@ var Book = function (_React$Component) {
 
     return _possibleConstructorReturn(this, (Book.__proto__ || Object.getPrototypeOf(Book)).apply(this, arguments));
   }
+
+  _createClass(Book, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "book" },
+        _react2.default.createElement(
+          "li",
+          null,
+          _react2.default.createElement(
+            "a",
+            { href: this.props.data.volumeInfo.infoLink, target: "_new" },
+            _react2.default.createElement("img", { src: this.props.data.volumeInfo.imageLinks.thumbnail })
+          )
+        )
+      );
+    }
+  }]);
 
   return Book;
 }(_react2.default.Component);

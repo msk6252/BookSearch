@@ -28,12 +28,18 @@ var Search = function (_React$Component) {
   }
 
   _createClass(Search, [{
+    key: "_Search",
+    value: function _Search(e) {
+      var needle = e.target.value.toLowerCase();
+      this.setState({ data: searchdata });
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
         "div",
         null,
-        _react2.default.createElement("input", { type: "text" })
+        _react2.default.createElement("input", { type: "text", placeholder: "\u691C\u7D22", onChange: this._Search })
       );
     }
   }]);

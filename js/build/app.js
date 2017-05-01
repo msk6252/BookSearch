@@ -12,10 +12,6 @@ var _Logo = require('./components/Logo');
 
 var _Logo2 = _interopRequireDefault(_Logo);
 
-var _Search = require('./components/Search');
-
-var _Search2 = _interopRequireDefault(_Search);
-
 var _BookBox = require('./components/BookBox');
 
 var _BookBox2 = _interopRequireDefault(_BookBox);
@@ -26,6 +22,6 @@ _reactDom2.default.render(_react2.default.createElement(
   'h1',
   null,
   _react2.default.createElement(_Logo2.default, null),
-  '\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u306B\u3088\u3046\u3053\u305D!',
-  _react2.default.createElement(_Search2.default, null)
+  'BookSearch',
+  _react2.default.createElement(_BookBox2.default, null)
 ), document.getElementById('app'));
