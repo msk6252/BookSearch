@@ -34,8 +34,8 @@ var BookNode = function (_React$Component) {
   _createClass(BookNode, [{
     key: 'render',
     value: function render() {
-      var bookNodes = this.props.data.map(function (book) {
-        return _react2.default.createElement(_Book2.default, { data: book });
+      var bookNodes = this.props.data.map(function (book, i) {
+        return _react2.default.createElement(_Book2.default, { data: book, key: i });
       });
 
       return _react2.default.createElement(

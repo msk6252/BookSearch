@@ -12,12 +12,19 @@ class BookBox extends React.Component {
     };
 
     this._search = this._search.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.loadAjax = this.loadAjax.bind(this);
   }
 
   _search(e){
-    this.setState({needle: e.target.value.toLowerCase()});
-    this.loadAjax(this.state.needle);
+    const ENTER = 13;
+    if(e.keyCode == ENTER){
+      this.loadAjax(this.state.needle);
+    }
+  }
+
+  handleChange(ev){
+    this.setState({needle: ev.target.value});
   }
   
   loadAjax(needle) {
@@ -38,7 +45,7 @@ class BookBox extends React.Component {
   render() {
     return (
       <div>
-        <input placeholder="検索" onChange={this._search} defaultValue={this.state.needle} />
+        <input placeholder="検索" onKeyDown={this._search} onChange={this.handleChange} defaultValue={this.state.needle} />
         <BookNode data={this.state.data} />
       </div>
     );
