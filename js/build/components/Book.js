@@ -30,17 +30,14 @@ var Book = function (_React$Component) {
   _createClass(Book, [{
     key: "render",
     value: function render() {
+
       return _react2.default.createElement(
         "div",
         { className: "book" },
         _react2.default.createElement(
-          "li",
-          null,
-          _react2.default.createElement(
-            "a",
-            { href: this.props.data.volumeInfo.infoLink, target: "_new" },
-            _react2.default.createElement("img", { src: this.props.data.volumeInfo.imageLinks.thumbnail })
-          )
+          "a",
+          { href: this.props.data.volumeInfo.infoLink, target: "_new" },
+          _react2.default.createElement("img", { src: this.props.data.volumeInfo.imageLinks.thumbnail })
         )
       );
     }

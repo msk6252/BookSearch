@@ -41,11 +41,7 @@ var BookNode = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'bookList' },
-        _react2.default.createElement(
-          'ul',
-          null,
-          bookNodes
-        )
+        bookNodes
       );
     }
   }]);

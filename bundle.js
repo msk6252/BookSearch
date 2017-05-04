@@ -22,8 +22,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(
   'h1',
   null,
-  _react2.default.createElement(_Logo2.default, null),
-  'BookSearch',
   _react2.default.createElement(_BookBox2.default, null)
 ), document.getElementById('app'));
 },{"./components/BookBox":3,"./components/Logo":5,"react":186,"react-dom":35}],2:[function(require,module,exports){
@@ -59,17 +57,14 @@ var Book = function (_React$Component) {
   _createClass(Book, [{
     key: "render",
     value: function render() {
+
       return _react2.default.createElement(
         "div",
         { className: "book" },
         _react2.default.createElement(
-          "li",
-          null,
-          _react2.default.createElement(
-            "a",
-            { href: this.props.data.volumeInfo.infoLink, target: "_new" },
-            _react2.default.createElement("img", { src: this.props.data.volumeInfo.imageLinks.thumbnail })
-          )
+          "a",
+          { href: this.props.data.volumeInfo.infoLink, target: "_new" },
+          _react2.default.createElement("img", { src: this.props.data.volumeInfo.imageLinks.thumbnail })
         )
       );
     }
@@ -132,7 +127,11 @@ var BookBox = function (_React$Component) {
     value: function _search(e) {
       var ENTER = 13;
       if (e.keyCode == ENTER) {
-        this.loadAjax(this.state.needle);
+        if (this.state.needle == "") {
+          this.loadAjax("react");
+        } else {
+          this.loadAjax(this.state.needle);
+        }
       }
     }
   }, {
@@ -161,7 +160,7 @@ var BookBox = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement('input', { placeholder: '\u691C\u7D22', onKeyDown: this._search, onChange: this.handleChange, defaultValue: this.state.needle }),
+        _react2.default.createElement('input', { placeholder: '\u691C\u7D22', onKeyDown: this._search, onChange: this.handleChange }),
         _react2.default.createElement(_BookNode2.default, { data: this.state.data })
       );
     }
@@ -215,11 +214,7 @@ var BookNode = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'bookList' },
-        _react2.default.createElement(
-          'ul',
-          null,
-          bookNodes
-        )
+        bookNodes
       );
     }
   }]);

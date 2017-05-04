@@ -11,9 +11,7 @@ class BookNode extends React.Component {
 
     return (
       <div className="bookList">
-        <ul>
           {bookNodes}
-        </ul>
       </div>
     );
   }

@@ -19,7 +19,11 @@ class BookBox extends React.Component {
   _search(e){
     const ENTER = 13;
     if(e.keyCode == ENTER){
-      this.loadAjax(this.state.needle);
+      if(this.state.needle == ""){
+        this.loadAjax("react");
+      } else {
+        this.loadAjax(this.state.needle);
+      }
     }
   }
 
@@ -45,7 +49,7 @@ class BookBox extends React.Component {
   render() {
     return (
       <div>
-        <input placeholder="検索" onKeyDown={this._search} onChange={this.handleChange} defaultValue={this.state.needle} />
+        <input placeholder="検索" onKeyDown={this._search} onChange={this.handleChange} />
         <BookNode data={this.state.data} />
       </div>
     );

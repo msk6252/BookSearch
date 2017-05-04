@@ -7,7 +7,7 @@ import BookBox from './components/BookBox';
 
 ReactDOM.render(
   <h1>
-    <Logo />BookSearch
+    
     <BookBox />
   </h1>,
   document.getElementById('app')

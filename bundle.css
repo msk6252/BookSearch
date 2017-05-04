@@ -1,4 +1,8 @@
-html {
+.book {
+  float:left;
+}.bookList {
+  overflow: hidden;
+}html {
   background:white;
   font:16px Arial;
 }
