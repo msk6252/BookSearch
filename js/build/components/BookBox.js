@@ -40,6 +40,7 @@ var BookBox = function (_React$Component) {
     };
 
     _this._search = _this._search.bind(_this);
+    _this.handleChange = _this.handleChange.bind(_this);
     _this.loadAjax = _this.loadAjax.bind(_this);
     return _this;
   }
@@ -47,8 +48,19 @@ var BookBox = function (_React$Component) {
   _createClass(BookBox, [{
     key: '_search',
     value: function _search(e) {
-      this.setState({ needle: e.target.value.toLowerCase() });
-      this.loadAjax(this.state.needle);
+      var ENTER = 13;
+      if (e.keyCode == ENTER) {
+        if (this.state.needle == "") {
+          this.loadAjax("react");
+        } else {
+          this.loadAjax(this.state.needle);
+        }
+      }
+    }
+  }, {
+    key: 'handleChange',
+    value: function handleChange(ev) {
+      this.setState({ needle: ev.target.value });
     }
   }, {
     key: 'loadAjax',
@@ -71,7 +83,7 @@ var BookBox = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement('input', { placeholder: '\u691C\u7D22', onChange: this._search, defaultValue: this.state.needle }),
+        _react2.default.createElement('input', { placeholder: '\u691C\u7D22', onKeyDown: this._search, onChange: this.handleChange }),
         _react2.default.createElement(_BookNode2.default, { data: this.state.data })
       );
     }
