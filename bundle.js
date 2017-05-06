@@ -22,6 +22,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(
   'h1',
   null,
+  'BookSearch',
   _react2.default.createElement(_BookBox2.default, null)
 ), document.getElementById('app'));
 },{"./components/BookBox":3,"./components/Logo":5,"react":186,"react-dom":35}],2:[function(require,module,exports){

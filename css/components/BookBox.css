@@ -1,6 +1,4 @@
-.book {
-  float:left;
-}body {
+body {
 　backgroud:#f8f8f8;
 }
 
@@ -28,9 +26,3 @@ input:focus, input:valid {
  background-position: 0 0;
 }
 
-.bookList {
-  overflow: hidden;
-}html {
-  background:white;
-  font:16px Arial;
-}
